@@ -1,0 +1,327 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11998,        319]
+NotebookOptionsPosition[      8320,        253]
+NotebookOutlinePosition[      8663,        268]
+CellTagsIndexPosition[      8620,        265]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Today we are going to see how we can use Wolfram language as a calculator in \
+the Notebook environment.\
+\>", "Text",
+ CellChangeTimes->{{3.766238809857627*^9, 
+  3.7662388706361446`*^9}},ExpressionUUID->"617ee56c-3e0c-41a5-bfc5-\
+dece7aba2c7a"],
+
+Cell["\<\
+Doing most arithmetic in Wolfram language is as easy as just typing the \
+expression you want to calculate.\
+\>", "Text",
+ CellChangeTimes->{{3.766238879499906*^9, 
+  3.7662389189967017`*^9}},ExpressionUUID->"c83c403b-5386-414a-878a-\
+4a460e41ecac"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", " ", "+", " ", "3"}]], "Input",
+ CellChangeTimes->{{3.766238920836176*^9, 3.766238926161172*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"7e721089-29de-43eb-a4e7-dcaabc1e3d3e"],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.7662389319294147`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"b1488c23-6f1b-4952-b067-bce921d6f49b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"45", " ", "*", " ", "3"}]], "Input",
+ CellChangeTimes->{{3.766239037135688*^9, 3.7662390390435104`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"b5e96968-93eb-44da-be8c-5a2c2da62ac8"],
+
+Cell[BoxData["135"], "Output",
+ CellChangeTimes->{3.766239039839019*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"d03f50f9-8993-4698-83ce-be9e7b138ff2"]
+}, Open  ]],
+
+Cell["\<\
+In most cases Wolfram language will hold your results in fractional form\
+\>", "Text",
+ CellChangeTimes->{{3.7662390597655544`*^9, 
+  3.766239075839636*^9}},ExpressionUUID->"3aa43ca9-f70d-4102-9864-\
+ac84cb58b00b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"6", "/", "7"}]], "Input",
+ CellChangeTimes->{{3.766239079939106*^9, 3.766239080908508*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"3371dc6d-85e1-49ba-a7bc-e392be0d1770"],
+
+Cell[BoxData[
+ FractionBox["6", "7"]], "Output",
+ CellChangeTimes->{3.7662390817090154`*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"5f109fd9-7b32-4843-9012-d521232cb4b9"]
+}, Open  ]],
+
+Cell["\<\
+But you can always get your result in floating point if you want\
+\>", "Text",
+ CellChangeTimes->{{3.766239086768893*^9, 
+  3.7662391166614466`*^9}},ExpressionUUID->"6f107bb3-77b4-44b1-a73a-\
+6108e496f6d2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"6", "/", "7"}], "]"}]], "Input",
+ CellChangeTimes->{{3.766239119258844*^9, 3.76623912309048*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"a5e6a261-b017-448a-8135-89a7cc5f0536"],
+
+Cell[BoxData["0.8571428571428571`"], "Output",
+ CellChangeTimes->{3.7662391236991043`*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"f643b2ef-2f85-4b6d-b026-4b0c18a31eb7"]
+}, Open  ]],
+
+Cell["If you need constants like Pi they are always available", "Text",
+ CellChangeTimes->{{3.766239412329008*^9, 
+  3.766239435078971*^9}},ExpressionUUID->"5c23fe86-7f46-4758-b515-\
+3bdc34158119"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Pi"], "Input",
+ CellChangeTimes->{{3.7662394371866703`*^9, 3.7662394383379602`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"c6b6aa67-0949-4cfd-a41f-146090e00acf"],
+
+Cell[BoxData["\[Pi]"], "Output",
+ CellChangeTimes->{3.7662394399459677`*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"ff7041b7-621f-4795-8b7f-c6eb6ec7d033"]
+}, Open  ]],
+
+Cell["We can also get the numerical value if we are interested. ", "Text",
+ CellChangeTimes->{{3.7662394517976546`*^9, 
+  3.766239535274148*^9}},ExpressionUUID->"afda75c1-2c14-451f-9a01-\
+654dcd117327"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "Pi", "]"}]], "Input",
+ CellChangeTimes->{{3.7662395180167947`*^9, 3.766239543391138*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"61bdf55a-b952-4c45-8460-d7aef59a5893"],
+
+Cell[BoxData["3.141592653589793`"], "Output",
+ CellChangeTimes->{3.766239544203636*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"d75ea43d-d07d-400f-a1ba-392083bf6b89"]
+}, Open  ]],
+
+Cell["Let\[CloseCurlyQuote]s increase the precision to 50 decimal places", \
+"Text",
+ CellChangeTimes->{{3.76623954954634*^9, 
+  3.7662395683577337`*^9}},ExpressionUUID->"5c75eb16-0959-4ba5-8a6b-\
+44004b9c7467"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Pi", ",", "50"}], "]"}]], "Input",
+ CellChangeTimes->{{3.766239570390478*^9, 3.766239578533455*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"452cd936-f932-43ac-bd8a-644ec447d372"],
+
+Cell[BoxData["3.\
+1415926535897932384626433832795028841971693993751058209749445923078164118876`\
+50."], "Output",
+ CellChangeTimes->{3.7662395800864954`*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"f05effad-6a96-4a34-b489-ade1b7611f15"]
+}, Open  ]],
+
+Cell["\<\
+You could use the Greek \[Pi] symbol in your own programs by typing the ESC \
+key followed by pi  and another ESC key. \
+\>", "Text",
+ CellChangeTimes->{{3.7662395865575027`*^9, 
+  3.7662397300329723`*^9}},ExpressionUUID->"43d07aa6-239e-4a0d-8260-\
+6d53f7f4981e"],
+
+Cell[BoxData["\[Pi]"], "Input",
+ CellChangeTimes->{{3.7662396774813986`*^9, 
+  3.7662396829230413`*^9}},ExpressionUUID->"fc09297b-5372-48f8-8f0a-\
+5b7ad200248d"],
+
+Cell["The area of a Circle is given by", "Text",
+ CellChangeTimes->{{3.7662397742576847`*^9, 
+  3.7662397823337*^9}},ExpressionUUID->"11e37a41-2f63-4f40-a603-c52176e760fb"],
+
+Cell[BoxData[
+ RowBox[{"\[Pi]", " ", 
+  SuperscriptBox[
+   RowBox[{"r", " "}], "2"]}]], "Input",
+ CellChangeTimes->{{3.7662397854717655`*^9, 
+  3.7662397981129646`*^9}},ExpressionUUID->"df532485-8dd3-45fb-b569-\
+f70a421a66cf"],
+
+Cell["\<\
+Using rule replacement we can fill in a value for r . The rule replacement \
+starts after the /. symbol on the right. the arrow is made by pressing minus \
+- followed by greater than > on your keyboard.\
+\>", "Text",
+ CellChangeTimes->{{3.766239811379778*^9, 3.7662398328195505`*^9}, {
+  3.766240028162015*^9, 
+  3.766240084291381*^9}},ExpressionUUID->"28af72c6-6c86-4006-90b3-\
+f204a2d6e2ca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Pi]", " ", 
+   SuperscriptBox[
+    RowBox[{"r", " "}], "2"]}], "/.", 
+  RowBox[{"r", "\[Rule]", " ", "3"}]}]], "Input",
+ CellChangeTimes->{{3.7662397854717655`*^9, 3.7662397981129646`*^9}, {
+  3.7662398469228473`*^9, 3.766239858833499*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"8ef7d17a-1598-4775-b335-c7243c93540a"],
+
+Cell[BoxData[
+ RowBox[{"9", " ", "\[Pi]"}]], "Output",
+ CellChangeTimes->{3.7662398600987177`*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"8bbe8c04-b315-4aac-b156-75586e5ef974"]
+}, Open  ]],
+
+Cell["Numerically", "Text",
+ CellChangeTimes->{{3.7662398698736863`*^9, 
+  3.766239871862459*^9}},ExpressionUUID->"bdd1eda9-ae11-4e78-ad86-\
+381bd4d191d7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"\[Pi]", " ", 
+    SuperscriptBox[
+     RowBox[{"r", " "}], "2"]}], "/.", 
+   RowBox[{"r", "\[Rule]", " ", "3"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7662398742210026`*^9, 3.7662398816284313`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"3e37f3d7-f67b-43d4-8611-d187d62c910b"],
+
+Cell[BoxData["28.274333882308138`"], "Output",
+ CellChangeTimes->{3.7662398830615487`*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"db368478-c618-475d-ab1c-df66ec46b529"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercises", "Section",
+ CellChangeTimes->{{3.7662398942236605`*^9, 
+  3.766239902321664*^9}},ExpressionUUID->"97db2a89-05b1-4535-8467-\
+5cabbecae338"],
+
+Cell["\<\
+1. Use the notebook environment to do some calculation of your own.\
+\>", "Text",
+ CellChangeTimes->{{3.766239906887847*^9, 
+  3.766239929450925*^9}},ExpressionUUID->"57754a42-4fe0-4f3a-b033-\
+b912dfc46348"],
+
+Cell["\<\
+2. Edit the last line of code so that you calculate the area of the circle of \
+radius 5 or any other number you want. \
+\>", "Text",
+ CellChangeTimes->{{3.7662399317724924`*^9, 3.7662400197851844`*^9}, {
+  3.7662400872005854`*^9, 
+  3.766240122284937*^9}},ExpressionUUID->"232f5d2d-e54c-4839-a87d-\
+b3aa2cf7a53e"]
+}, Open  ]]
+},
+WindowSize->{775, 569},
+WindowMargins->{{Automatic, 263}, {23, Automatic}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 256, 6, 34, "Text",ExpressionUUID->"617ee56c-3e0c-41a5-bfc5-dece7aba2c7a"],
+Cell[817, 28, 259, 6, 34, "Text",ExpressionUUID->"c83c403b-5386-414a-878a-4a460e41ecac"],
+Cell[CellGroupData[{
+Cell[1101, 38, 204, 3, 28, "Input",ExpressionUUID->"7e721089-29de-43eb-a4e7-dcaabc1e3d3e"],
+Cell[1308, 43, 151, 2, 32, "Output",ExpressionUUID->"b1488c23-6f1b-4952-b067-bce921d6f49b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1496, 50, 207, 3, 28, "Input",ExpressionUUID->"b5e96968-93eb-44da-be8c-5a2c2da62ac8"],
+Cell[1706, 55, 151, 2, 32, "Output",ExpressionUUID->"d03f50f9-8993-4698-83ce-be9e7b138ff2"]
+}, Open  ]],
+Cell[1872, 60, 224, 5, 34, "Text",ExpressionUUID->"3aa43ca9-f70d-4102-9864-ac84cb58b00b"],
+Cell[CellGroupData[{
+Cell[2121, 69, 194, 3, 28, "Input",ExpressionUUID->"3371dc6d-85e1-49ba-a7bc-e392be0d1770"],
+Cell[2318, 74, 171, 3, 49, "Output",ExpressionUUID->"5f109fd9-7b32-4843-9012-d521232cb4b9"]
+}, Open  ]],
+Cell[2504, 80, 216, 5, 34, "Text",ExpressionUUID->"6f107bb3-77b4-44b1-a73a-6108e496f6d2"],
+Cell[CellGroupData[{
+Cell[2745, 89, 221, 4, 28, "Input",ExpressionUUID->"a5e6a261-b017-448a-8135-89a7cc5f0536"],
+Cell[2969, 95, 169, 2, 32, "Output",ExpressionUUID->"f643b2ef-2f85-4b6d-b026-4b0c18a31eb7"]
+}, Open  ]],
+Cell[3153, 100, 197, 3, 34, "Text",ExpressionUUID->"5c23fe86-7f46-4758-b515-3bdc34158119"],
+Cell[CellGroupData[{
+Cell[3375, 107, 177, 2, 28, "Input",ExpressionUUID->"c6b6aa67-0949-4cfd-a41f-146090e00acf"],
+Cell[3555, 111, 155, 2, 32, "Output",ExpressionUUID->"ff7041b7-621f-4795-8b7f-c6eb6ec7d033"]
+}, Open  ]],
+Cell[3725, 116, 202, 3, 34, "Text",ExpressionUUID->"afda75c1-2c14-451f-9a01-654dcd117327"],
+Cell[CellGroupData[{
+Cell[3952, 123, 202, 3, 28, "Input",ExpressionUUID->"61bdf55a-b952-4c45-8460-d7aef59a5893"],
+Cell[4157, 128, 166, 2, 32, "Output",ExpressionUUID->"d75ea43d-d07d-400f-a1ba-392083bf6b89"]
+}, Open  ]],
+Cell[4338, 133, 211, 4, 34, "Text",ExpressionUUID->"5c75eb16-0959-4ba5-8a6b-44004b9c7467"],
+Cell[CellGroupData[{
+Cell[4574, 141, 224, 4, 28, "Input",ExpressionUUID->"452cd936-f932-43ac-bd8a-644ec447d372"],
+Cell[4801, 147, 236, 4, 32, "Output",ExpressionUUID->"f05effad-6a96-4a34-b489-ade1b7611f15"]
+}, Open  ]],
+Cell[5052, 154, 273, 6, 56, "Text",ExpressionUUID->"43d07aa6-239e-4a0d-8260-6d53f7f4981e"],
+Cell[5328, 162, 161, 3, 28, "Input",ExpressionUUID->"fc09297b-5372-48f8-8f0a-5b7ad200248d"],
+Cell[5492, 167, 172, 2, 34, "Text",ExpressionUUID->"11e37a41-2f63-4f40-a603-c52176e760fb"],
+Cell[5667, 171, 226, 6, 28, "Input",ExpressionUUID->"df532485-8dd3-45fb-b569-f70a421a66cf"],
+Cell[5896, 179, 403, 8, 56, "Text",ExpressionUUID->"28af72c6-6c86-4006-90b3-f204a2d6e2ca"],
+Cell[CellGroupData[{
+Cell[6324, 191, 356, 8, 28, "Input",ExpressionUUID->"8ef7d17a-1598-4775-b335-c7243c93540a"],
+Cell[6683, 201, 177, 3, 32, "Output",ExpressionUUID->"8bbe8c04-b315-4aac-b156-75586e5ef974"]
+}, Open  ]],
+Cell[6875, 207, 155, 3, 34, "Text",ExpressionUUID->"bdd1eda9-ae11-4e78-ad86-381bd4d191d7"],
+Cell[CellGroupData[{
+Cell[7055, 214, 337, 8, 32, "Input",ExpressionUUID->"3e37f3d7-f67b-43d4-8611-d187d62c910b"],
+Cell[7395, 224, 169, 2, 32, "Output",ExpressionUUID->"db368478-c618-475d-ab1c-df66ec46b529"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7601, 231, 156, 3, 67, "Section",ExpressionUUID->"97db2a89-05b1-4535-8467-5cabbecae338"],
+Cell[7760, 236, 217, 5, 34, "Text",ExpressionUUID->"57754a42-4fe0-4f3a-b033-b912dfc46348"],
+Cell[7980, 243, 324, 7, 56, "Text",ExpressionUUID->"232f5d2d-e54c-4839-a87d-b3aa2cf7a53e"]
+}, Open  ]]
+}
+]
+*)
+

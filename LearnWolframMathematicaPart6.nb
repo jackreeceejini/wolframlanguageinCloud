@@ -1,0 +1,716 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28342,        708]
+NotebookOptionsPosition[     22401,        605]
+NotebookOutlinePosition[     22742,        620]
+CellTagsIndexPosition[     22699,        617]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Continuing our Data-centric approach to learning Wolfram language we will \
+tackle Associations aka Dictionaries.\
+\>", "Text",
+ CellChangeTimes->{{3.767618586378989*^9, 
+  3.7676186528850136`*^9}},ExpressionUUID->"ac44f5bc-e19b-4813-a168-\
+f07d6c8903b1"],
+
+Cell["\<\
+When you are training Neural Networks the data is usually supplied as an \
+association which is a mapping between keys and values. We will learn about \
+Neural Networks much later but for now, let us see the kinds of things you \
+can do with associations\
+\>", "Text",
+ CellChangeTimes->{{3.76761866537733*^9, 3.767618712739163*^9}, {
+  3.767618788697392*^9, 
+  3.7676188211084375`*^9}},ExpressionUUID->"ab3d0e31-d95d-4c9b-8ea5-\
+5b694224a94f"],
+
+Cell["\<\
+We use the less than <  sign with a bar | combined together on start the \
+association. The content of the association are comma separated lists of key \
+-> value pairs. We close it with a vertical bar and a greater than sign. As \
+you can see below there is no intrinsic requirements that they keys or the \
+values are of a special data type. They could be anything due to the symbolic \
+nature of the Wolfram language. Below we map symbols to symbols.\
+\>", "Text",
+ CellChangeTimes->{{3.767619324580446*^9, 3.767619395115014*^9}, {
+  3.7676196333073587`*^9, 3.7676197918037696`*^9}, {3.7677096232622313`*^9, 
+  3.7677096260285006`*^9}},ExpressionUUID->"ca17e1ad-e4ba-4d4c-9440-\
+db77bafc19b8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<|", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", " ", "Wolfram"}], ",", " ", 
+   RowBox[{"type", " ", "\[Rule]", " ", "company"}], ",", " ", 
+   RowBox[{"founded", " ", "\[Rule]", " ", "1988"}]}], "|>"}]], "Input",
+ CellChangeTimes->{{3.7676190037729692`*^9, 3.7676190567473536`*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"c0a0617c-2f82-4623-9ba2-f755c16ead04"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", "Wolfram"}], ",", 
+   RowBox[{"type", "\[Rule]", "company"}], ",", 
+   RowBox[{"founded", "\[Rule]", "1988"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7676190599693694`*^9, 3.767707277260665*^9, 
+  3.7677097778570185`*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"14e0fba2-719b-48ba-b25d-517afcae7d55"]
+}, Open  ]],
+
+Cell["You can build an association from a list of mappings", "Text",
+ CellChangeTimes->{{3.76762113584523*^9, 
+  3.7676211762873297`*^9}},ExpressionUUID->"4b12e2d7-da03-4cc6-95c4-\
+c177084e0c9e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Association", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"name", "\[Rule]", " ", "Wolfram"}], ",", " ", 
+    RowBox[{"type", " ", "\[Rule]", " ", "company"}], ",", " ", 
+    RowBox[{"founded", " ", "\[Rule]", " ", "1988"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.767621178681855*^9, 3.767621232447749*^9}},
+ CellLabel->"In[79]:=",ExpressionUUID->"47a9f826-304b-4112-b998-74eac2a4047f"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", "Wolfram"}], ",", 
+   RowBox[{"type", "\[Rule]", "company"}], ",", 
+   RowBox[{"founded", "\[Rule]", "1988"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.767621234781314*^9, 3.7677072784859095`*^9, 
+  3.7677097781258545`*^9},
+ CellLabel->"Out[79]=",ExpressionUUID->"efe8e3bd-36dc-4438-bd87-22bedab18b7a"]
+}, Open  ]],
+
+Cell["You can get a list of rules back from an association", "Text",
+ CellChangeTimes->{{3.767707258019533*^9, 3.7677072646714168`*^9}, {
+  3.7677073038023233`*^9, 
+  3.767707316222677*^9}},ExpressionUUID->"ba9d5594-0aff-4aac-87ac-\
+6d05fc189b61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"name", "\[Rule]", " ", "Wolfram"}], ",", " ", 
+    RowBox[{"type", " ", "\[Rule]", " ", "company"}], ",", " ", 
+    RowBox[{"founded", " ", "\[Rule]", " ", "1988"}]}], "|>"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.767707266887076*^9, 3.7677073274997325`*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"3eda2378-9f57-49ae-a7e2-78f3d6f9c48e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", "Wolfram"}], ",", 
+   RowBox[{"type", "\[Rule]", "company"}], ",", 
+   RowBox[{"founded", "\[Rule]", "1988"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767707328127344*^9, 3.7677097782187977`*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"8532bec3-7cec-4119-a872-c29fdba8a941"]
+}, Open  ]],
+
+Cell["We can get a value using a key", "Text",
+ CellChangeTimes->{{3.7677073584007125`*^9, 3.76770737177547*^9}, {
+  3.767707425566352*^9, 
+  3.767707434172062*^9}},ExpressionUUID->"e862997a-0fed-4faa-b8ef-\
+5016ce15b592"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"name", "\[Rule]", " ", "Wolfram"}], ",", " ", 
+    RowBox[{"type", " ", "\[Rule]", " ", "company"}], ",", " ", 
+    RowBox[{"founded", " ", "\[Rule]", " ", "1988"}]}], "|>"}], "[", "name", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.767707266887076*^9, 3.7677073274997325`*^9}, {
+  3.767707374724662*^9, 3.767707388075435*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"1e72c09e-e32f-4cd7-a820-b91a1f5905c9"],
+
+Cell[BoxData["Wolfram"], "Output",
+ CellChangeTimes->{3.7677073889738827`*^9, 3.7677097783177347`*^9},
+ CellLabel->"Out[81]=",ExpressionUUID->"bed69c3d-ac84-4a1d-83cc-c1cce76f509e"]
+}, Open  ]],
+
+Cell["Get all the keys", "Text",
+ CellChangeTimes->{{3.7677074401913443`*^9, 
+  3.7677074457669144`*^9}},ExpressionUUID->"dbe83735-9d51-4e9b-9cbd-\
+420dc82c57fa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "[", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"name", "\[Rule]", " ", "Wolfram"}], ",", " ", 
+    RowBox[{"type", " ", "\[Rule]", " ", "company"}], ",", " ", 
+    RowBox[{"founded", " ", "\[Rule]", " ", "1988"}]}], "|>"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.767707450172202*^9, 3.7677074540038424`*^9}},
+ CellLabel->"In[82]:=",ExpressionUUID->"856ccca2-b186-408f-8591-f2f2019349b1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"name", ",", "type", ",", "founded"}], "}"}]], "Output",
+ CellChangeTimes->{3.7677074557467694`*^9, 3.7677097784716406`*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"6e7a76b0-dea3-4bc4-9a99-339d887eded9"]
+}, Open  ]],
+
+Cell["Change the value a key is mapped to", "Text",
+ CellChangeTimes->{{3.7677074967725096`*^9, 
+  3.7677075137920303`*^9}},ExpressionUUID->"7d749241-7c6a-41db-b0b0-\
+d36ef6b95857"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"assoc", " ", "=", " ", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"name", "\[Rule]", " ", "Wolfram"}], ",", " ", 
+    RowBox[{"type", " ", "\[Rule]", " ", "company"}], ",", " ", 
+    RowBox[{"founded", " ", "\[Rule]", " ", "1988"}]}], "|>"}]}]], "Input",
+ CellChangeTimes->{{3.767707517217921*^9, 3.7677075206068344`*^9}},
+ CellLabel->"In[83]:=",ExpressionUUID->"3db98a33-6e6f-488a-89f8-a76e00a05587"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", "Wolfram"}], ",", 
+   RowBox[{"type", "\[Rule]", "company"}], ",", 
+   RowBox[{"founded", "\[Rule]", "1988"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.767707522153882*^9, 3.767709778559588*^9},
+ CellLabel->"Out[83]=",ExpressionUUID->"4e417e4c-b1fd-47fa-ac5c-09bb1e4820ed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"assoc", "[", "name", "]"}], " ", "=", " ", 
+  "\"\<Wolfram Research\>\""}]], "Input",
+ CellChangeTimes->{{3.7677075248212395`*^9, 3.7677075456753993`*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"600c40a5-490b-4a20-bc36-0b9e7afb899f"],
+
+Cell[BoxData["\<\"Wolfram Research\"\>"], "Output",
+ CellChangeTimes->{3.767707548609593*^9, 3.7677097786525307`*^9},
+ CellLabel->"Out[84]=",ExpressionUUID->"59218eb1-3506-4219-9311-8f09bb31d57e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["assoc"], "Input",
+ CellChangeTimes->{{3.7677075499417725`*^9, 3.7677075508112373`*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"8f43dd30-bb4b-43ee-b935-cd6dfadbefd9"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", "\<\"Wolfram Research\"\>"}], ",", 
+   RowBox[{"type", "\[Rule]", "company"}], ",", 
+   RowBox[{"founded", "\[Rule]", "1988"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7677075531118183`*^9, 3.767709778805437*^9},
+ CellLabel->"Out[85]=",ExpressionUUID->"48e6f2b5-a9fd-41a0-8ebc-bbc90471f788"]
+}, Open  ]],
+
+Cell["\<\
+One nice feature is the ability to Map a function over the keys\
+\>", "Text",
+ CellChangeTimes->{{3.7677075842156696`*^9, 
+  3.7677075984938765`*^9}},ExpressionUUID->"16a8853d-4568-4ad6-8fa4-\
+0d3e8501ad09"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"func", ",", "assoc"}], "]"}]], "Input",
+ CellChangeTimes->{{3.767707602512404*^9, 3.767707611228036*^9}},
+ CellLabel->"In[86]:=",ExpressionUUID->"e2131d78-665a-4781-91ac-d4566784a040"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"name", "\[Rule]", 
+    RowBox[{"func", "[", "\<\"Wolfram Research\"\>", "]"}]}], ",", 
+   RowBox[{"type", "\[Rule]", 
+    RowBox[{"func", "[", "company", "]"}]}], ",", 
+   RowBox[{"founded", "\[Rule]", 
+    RowBox[{"func", "[", "1988", "]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.767707611791691*^9, 3.7677097789013786`*^9},
+ CellLabel->"Out[86]=",ExpressionUUID->"57952031-a565-42a3-b19f-e6dc602762a1"]
+}, Open  ]],
+
+Cell["\<\
+The function can be something as interesting as the square root. Below we \
+create an association mapping number from 2 to 10 to their square roots.\
+\>", "Text",
+ CellChangeTimes->{{3.767707788688771*^9, 3.7677078117515707`*^9}, {
+  3.7677079182250166`*^9, 3.767707935058652*^9}, {3.7677085760379934`*^9, 
+  3.7677085767135773`*^9}},ExpressionUUID->"9d9ab08d-64c5-461c-b424-\
+80089782bd8c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Sqrt", ",", 
+   RowBox[{"<|", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"x", "\[Rule]", " ", "x"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "2", ",", "10"}], "}"}]}], "]"}], "|>"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7677079385255175`*^9, 3.7677079541778803`*^9}, {
+  3.7677083118366656`*^9, 3.767708315685294*^9}, {3.767708371000238*^9, 
+  3.7677083760751114`*^9}, {3.7677085358687267`*^9, 3.7677086117050333`*^9}},
+ CellLabel->"In[88]:=",ExpressionUUID->"953d1107-7739-430b-987a-353cf2d0a0b8"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"2", "\[Rule]", 
+    SqrtBox["2"]}], ",", 
+   RowBox[{"3", "\[Rule]", 
+    SqrtBox["3"]}], ",", 
+   RowBox[{"4", "\[Rule]", "2"}], ",", 
+   RowBox[{"5", "\[Rule]", 
+    SqrtBox["5"]}], ",", 
+   RowBox[{"6", "\[Rule]", 
+    SqrtBox["6"]}], ",", 
+   RowBox[{"7", "\[Rule]", 
+    SqrtBox["7"]}], ",", 
+   RowBox[{"8", "\[Rule]", 
+    RowBox[{"2", " ", 
+     SqrtBox["2"]}]}], ",", 
+   RowBox[{"9", "\[Rule]", "3"}], ",", 
+   RowBox[{"10", "\[Rule]", 
+    SqrtBox["10"]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.7677079551582766`*^9, 3.76770831668568*^9, 3.767708377889993*^9, {
+   3.767708538234269*^9, 3.767708580280382*^9}, 3.767708612197728*^9, 
+   3.7677086524899187`*^9, 3.7677097791442285`*^9},
+ CellLabel->"Out[88]=",ExpressionUUID->"c695eb79-5131-4621-9432-4769e60184f8"]
+}, Open  ]],
+
+Cell["Let\[CloseCurlyQuote]s process it further to get numerical values", \
+"Text",
+ CellChangeTimes->{{3.767707968222233*^9, 
+  3.7677079801598825`*^9}},ExpressionUUID->"25e756c1-0289-46ca-9c4b-\
+5ffda61da86b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"N", ",", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Sqrt", ",", 
+     RowBox[{"<|", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"x", "\[Rule]", " ", "x"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "2", ",", "10"}], "}"}]}], "]"}], "|>"}]}], 
+    "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7677079820287294`*^9, 3.7677080006372747`*^9}, {
+  3.7677086385554986`*^9, 3.7677086590618753`*^9}, {3.767708707935783*^9, 
+  3.767708730637805*^9}},
+ CellLabel->"In[89]:=",ExpressionUUID->"ed5464e3-2e41-4b9a-a80f-8202ce96a0bb"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"2", "\[Rule]", "1.4142135623730951`"}], ",", 
+   RowBox[{"3", "\[Rule]", "1.7320508075688772`"}], ",", 
+   RowBox[{"4", "\[Rule]", "2.`"}], ",", 
+   RowBox[{"5", "\[Rule]", "2.23606797749979`"}], ",", 
+   RowBox[{"6", "\[Rule]", "2.449489742783178`"}], ",", 
+   RowBox[{"7", "\[Rule]", "2.6457513110645907`"}], ",", 
+   RowBox[{"8", "\[Rule]", "2.8284271247461903`"}], ",", 
+   RowBox[{"9", "\[Rule]", "3.`"}], ",", 
+   RowBox[{"10", "\[Rule]", "3.1622776601683795`"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7677080015816927`*^9, 3.767708685412651*^9, 
+  3.767708731300397*^9, 3.7677097792691517`*^9},
+ CellLabel->"Out[89]=",ExpressionUUID->"821ab77b-f2c1-4c62-a50b-74d321c10f52"]
+}, Open  ]],
+
+Cell["\<\
+We could have done it in a single step using a pure function. We will talk of \
+functions in a later session\
+\>", "Text",
+ CellChangeTimes->{{3.767708007545021*^9, 3.7677080504855795`*^9}, {
+  3.7677099281744657`*^9, 
+  3.7677099286221905`*^9}},ExpressionUUID->"6bd231fc-f088-44a5-b84f-\
+ca1111ad9a9a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"N", "[", 
+     RowBox[{"Sqrt", "[", "#", "]"}], "]"}], "&"}], ",", 
+   RowBox[{"<|", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"x", "\[Rule]", " ", "x"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "2", ",", "10"}], "}"}]}], "]"}], "|>"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7677080606373315`*^9, 3.767708092916455*^9}, {
+  3.7677087670883617`*^9, 3.7677088105146217`*^9}},
+ CellLabel->"In[90]:=",ExpressionUUID->"a0c9236a-eca8-42e3-8495-b3fa46e37d2c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"2", "\[Rule]", "1.4142135623730951`"}], ",", 
+   RowBox[{"3", "\[Rule]", "1.7320508075688772`"}], ",", 
+   RowBox[{"4", "\[Rule]", "2.`"}], ",", 
+   RowBox[{"5", "\[Rule]", "2.23606797749979`"}], ",", 
+   RowBox[{"6", "\[Rule]", "2.449489742783178`"}], ",", 
+   RowBox[{"7", "\[Rule]", "2.6457513110645907`"}], ",", 
+   RowBox[{"8", "\[Rule]", "2.8284271247461903`"}], ",", 
+   RowBox[{"9", "\[Rule]", "3.`"}], ",", 
+   RowBox[{"10", "\[Rule]", "3.1622776601683795`"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.767708093664996*^9, 3.7677088110912685`*^9, 
+  3.7677097793691015`*^9},
+ CellLabel->"Out[90]=",ExpressionUUID->"f52205b2-66c1-428b-8e26-9bd6329b4b22"]
+}, Open  ]],
+
+Cell["Sometimes you can treat associations like Lists", "Text",
+ CellChangeTimes->{{3.767708200751062*^9, 3.767708207859685*^9}, {
+  3.7677082409962826`*^9, 
+  3.767708241703847*^9}},ExpressionUUID->"66553404-f4e3-4258-bca2-\
+cebfabbdf5c8"],
+
+Cell["\<\
+First lets use RandomSample function to randomize the association\
+\>", "Text",
+ CellChangeTimes->{{3.767708835081498*^9, 3.767708837243167*^9}, {
+  3.76770887340291*^9, 
+  3.7677088923412423`*^9}},ExpressionUUID->"3b950640-ffff-41f8-b146-\
+b255f3ae63db"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"randAssoc", " ", "=", " ", 
+  RowBox[{"RandomSample", "[", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"N", "[", 
+       RowBox[{"Sqrt", "[", "#", "]"}], "]"}], "&"}], ",", 
+     RowBox[{"<|", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"x", "\[Rule]", " ", "x"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "2", ",", "10"}], "}"}]}], "]"}], "|>"}]}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.767708845824883*^9, 3.767708861256382*^9}},
+ CellLabel->"In[91]:=",ExpressionUUID->"186ec357-13af-4441-9ba1-42a7c6b91406"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"7", "\[Rule]", "2.6457513110645907`"}], ",", 
+   RowBox[{"6", "\[Rule]", "2.449489742783178`"}], ",", 
+   RowBox[{"5", "\[Rule]", "2.23606797749979`"}], ",", 
+   RowBox[{"10", "\[Rule]", "3.1622776601683795`"}], ",", 
+   RowBox[{"4", "\[Rule]", "2.`"}], ",", 
+   RowBox[{"9", "\[Rule]", "3.`"}], ",", 
+   RowBox[{"8", "\[Rule]", "2.8284271247461903`"}], ",", 
+   RowBox[{"3", "\[Rule]", "1.7320508075688772`"}], ",", 
+   RowBox[{"2", "\[Rule]", "1.4142135623730951`"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7677088676364536`*^9, 3.767709779568965*^9},
+ CellLabel->"Out[91]=",ExpressionUUID->"c70977ea-059d-4ae9-8043-e3f7fae2be50"]
+}, Open  ]],
+
+Cell["Sort it", "Text",
+ CellChangeTimes->{{3.767708903185562*^9, 
+  3.767708909806489*^9}},ExpressionUUID->"4e475046-d4e7-4725-80f5-\
+d0376d26ced8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "[", "randAssoc", "]"}]], "Input",
+ CellChangeTimes->{{3.7677089129225683`*^9, 3.767708930983447*^9}},
+ CellLabel->"In[92]:=",ExpressionUUID->"b23fd244-83b9-40e1-86da-df7ffe4e8e0f"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"2", "\[Rule]", "1.4142135623730951`"}], ",", 
+   RowBox[{"3", "\[Rule]", "1.7320508075688772`"}], ",", 
+   RowBox[{"4", "\[Rule]", "2.`"}], ",", 
+   RowBox[{"5", "\[Rule]", "2.23606797749979`"}], ",", 
+   RowBox[{"6", "\[Rule]", "2.449489742783178`"}], ",", 
+   RowBox[{"7", "\[Rule]", "2.6457513110645907`"}], ",", 
+   RowBox[{"8", "\[Rule]", "2.8284271247461903`"}], ",", 
+   RowBox[{"9", "\[Rule]", "3.`"}], ",", 
+   RowBox[{"10", "\[Rule]", "3.1622776601683795`"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.767708931507125*^9, 3.7677097796958857`*^9},
+ CellLabel->"Out[92]=",ExpressionUUID->"b00c7b32-cc97-4e8c-a3bd-39b09458eabf"]
+}, Open  ]],
+
+Cell["Append a new Key -> Value pair", "Text",
+ CellChangeTimes->{{3.7677089607611127`*^9, 
+  3.7677089780374784`*^9}},ExpressionUUID->"34038d7a-8843-4b23-bc4c-\
+8dc523ee1936"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Append", "[", 
+  RowBox[{"randAssoc", ",", 
+   RowBox[{"11", " ", "\[Rule]", " ", 
+    RowBox[{"Sqrt", "[", "11", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7677089841207347`*^9, 3.7677090117757053`*^9}},
+ CellLabel->"In[93]:=",ExpressionUUID->"ee6d95e5-fa8d-467f-9280-6c032f355563"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"7", "\[Rule]", "2.6457513110645907`"}], ",", 
+   RowBox[{"6", "\[Rule]", "2.449489742783178`"}], ",", 
+   RowBox[{"5", "\[Rule]", "2.23606797749979`"}], ",", 
+   RowBox[{"10", "\[Rule]", "3.1622776601683795`"}], ",", 
+   RowBox[{"4", "\[Rule]", "2.`"}], ",", 
+   RowBox[{"9", "\[Rule]", "3.`"}], ",", 
+   RowBox[{"8", "\[Rule]", "2.8284271247461903`"}], ",", 
+   RowBox[{"3", "\[Rule]", "1.7320508075688772`"}], ",", 
+   RowBox[{"2", "\[Rule]", "1.4142135623730951`"}], ",", 
+   RowBox[{"11", "\[Rule]", 
+    SqrtBox["11"]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.7677090124852667`*^9, 3.7677097797928295`*^9},
+ CellLabel->"Out[93]=",ExpressionUUID->"77296503-1cf5-452f-8522-424aa4bd8d2f"]
+}, Open  ]],
+
+Cell["Total the keys", "Text",
+ CellChangeTimes->{{3.767709028070672*^9, 
+  3.767709030054451*^9}},ExpressionUUID->"cfd435fe-cbd0-493d-85da-\
+f0ea90ad1e74"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", "randAssoc", "]"}]], "Input",
+ CellChangeTimes->{{3.7677090433722506`*^9, 3.7677090555617456`*^9}},
+ CellLabel->"In[94]:=",ExpressionUUID->"18e1c284-c46d-4e01-85f4-ee8e15043fe2"],
+
+Cell[BoxData["21.468278186204103`"], "Output",
+ CellChangeTimes->{3.7677090560984125`*^9, 3.767709779910756*^9},
+ CellLabel->"Out[94]=",ExpressionUUID->"c3517167-66d9-433d-9641-57d53b5642e0"]
+}, Open  ]],
+
+Cell["\<\
+My favourite operation is performing SQL-like SELECT on an association. In \
+principle you could build a full database using associations\
+\>", "Text",
+ CellChangeTimes->{{3.767709086174897*^9, 3.7677091341783404`*^9}, {
+  3.7677099852313457`*^9, 
+  3.767709986108798*^9}},ExpressionUUID->"ddd5dc07-ebbb-4e45-8e91-\
+95474e40cf7b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{"randAssoc", ",", 
+   RowBox[{
+    RowBox[{"#", ">", "3"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.767709140176645*^9, 3.7677092027990904`*^9}, {
+  3.7677093100120783`*^9, 3.767709311019458*^9}},
+ CellLabel->"In[95]:=",ExpressionUUID->"55bd5bf2-6e20-4db8-a9a4-bdb29c868569"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"10", "\[Rule]", "3.1622776601683795`"}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.767709179831232*^9, 3.767709203650566*^9}, 
+   3.767709311604098*^9, 3.767709780084647*^9},
+ CellLabel->"Out[95]=",ExpressionUUID->"de6ce5ea-a6e2-483f-8ccb-da61b52599ab"]
+}, Open  ]],
+
+Cell["\<\
+The Select function above reads like: Select from association where value \
+greater than 3. Note that is not the keys but the values we select even \
+though the keys are also numerical. We do the selection using a pure function\
+\>", "Text",
+ CellChangeTimes->{{3.76770924703685*^9, 3.7677092812847657`*^9}, {
+  3.7677093269686375`*^9, 3.767709400244521*^9}, {3.767710024924898*^9, 
+  3.7677100391511393`*^9}},ExpressionUUID->"f05dfa5d-4532-4e92-a1b8-\
+291361c22ec8"],
+
+Cell[CellGroupData[{
+
+Cell["Exercises", "Section",
+ CellChangeTimes->{{3.767709433990743*^9, 
+  3.7677094372017655`*^9}},ExpressionUUID->"ceed135a-e685-4cf4-88ff-\
+c1a51a68d0d5"],
+
+Cell["\<\
+1. Create an association mapping any two things of interest to you.
+2. Perform all the operations we have covered in this session
+3. Go the Wolfram Documentation, search for associations in the search bar, \
+open the page and try to perform as many operations as you can on the \
+association you created above. 
+
+4. How would you go about to create a database with Tables for storing data \
+an mechanisms for retrieving the data? You are not expected to do this but it \
+is a great thinking exercise.\
+\>", "Text",
+ CellChangeTimes->{{3.7677094924487495`*^9, 3.7677095734408817`*^9}, {
+  3.7677096346481957`*^9, 
+  3.7677097306890626`*^9}},ExpressionUUID->"b57615d0-566b-481b-b36d-\
+5f1725dea5f7"]
+}, Open  ]]
+},
+WindowSize->{716, 684},
+WindowMargins->{{-6, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 265, 6, 56, "Text",ExpressionUUID->"ac44f5bc-e19b-4813-a168-f07d6c8903b1"],
+Cell[826, 28, 454, 9, 78, "Text",ExpressionUUID->"ab3d0e31-d95d-4c9b-8ea5-5b694224a94f"],
+Cell[1283, 39, 706, 11, 122, "Text",ExpressionUUID->"ca17e1ad-e4ba-4d4c-9440-db77bafc19b8"],
+Cell[CellGroupData[{
+Cell[2014, 54, 385, 7, 28, "Input",ExpressionUUID->"c0a0617c-2f82-4623-9ba2-f755c16ead04"],
+Cell[2402, 63, 410, 9, 32, "Output",ExpressionUUID->"14e0fba2-719b-48ba-b25d-517afcae7d55"]
+}, Open  ]],
+Cell[2827, 75, 195, 3, 34, "Text",ExpressionUUID->"4b12e2d7-da03-4cc6-95c4-c177084e0c9e"],
+Cell[CellGroupData[{
+Cell[3047, 82, 421, 8, 28, "Input",ExpressionUUID->"47a9f826-304b-4112-b998-74eac2a4047f"],
+Cell[3471, 92, 410, 9, 32, "Output",ExpressionUUID->"efe8e3bd-36dc-4438-bd87-22bedab18b7a"]
+}, Open  ]],
+Cell[3896, 104, 247, 4, 34, "Text",ExpressionUUID->"ba9d5594-0aff-4aac-87ac-6d05fc189b61"],
+Cell[CellGroupData[{
+Cell[4168, 112, 423, 9, 28, "Input",ExpressionUUID->"3eda2378-9f57-49ae-a7e2-78f3d6f9c48e"],
+Cell[4594, 123, 345, 7, 32, "Output",ExpressionUUID->"8532bec3-7cec-4119-a872-c29fdba8a941"]
+}, Open  ]],
+Cell[4954, 133, 222, 4, 34, "Text",ExpressionUUID->"e862997a-0fed-4faa-b8ef-5016ce15b592"],
+Cell[CellGroupData[{
+Cell[5201, 141, 470, 10, 28, "Input",ExpressionUUID->"1e72c09e-e32f-4cd7-a820-b91a1f5905c9"],
+Cell[5674, 153, 181, 2, 32, "Output",ExpressionUUID->"bed69c3d-ac84-4a1d-83cc-c1cce76f509e"]
+}, Open  ]],
+Cell[5870, 158, 162, 3, 34, "Text",ExpressionUUID->"dbe83735-9d51-4e9b-9cbd-420dc82c57fa"],
+Cell[CellGroupData[{
+Cell[6057, 165, 421, 9, 28, "Input",ExpressionUUID->"856ccca2-b186-408f-8591-f2f2019349b1"],
+Cell[6481, 176, 242, 4, 32, "Output",ExpressionUUID->"6e7a76b0-dea3-4bc4-9a99-339d887eded9"]
+}, Open  ]],
+Cell[6738, 183, 181, 3, 34, "Text",ExpressionUUID->"7d749241-7c6a-41db-b0b0-d36ef6b95857"],
+Cell[CellGroupData[{
+Cell[6944, 190, 424, 8, 28, "Input",ExpressionUUID->"3db98a33-6e6f-488a-89f8-a76e00a05587"],
+Cell[7371, 200, 381, 8, 32, "Output",ExpressionUUID->"4e417e4c-b1fd-47fa-ac5c-09bb1e4820ed"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7789, 213, 269, 5, 28, "Input",ExpressionUUID->"600c40a5-490b-4a20-bc36-0b9e7afb899f"],
+Cell[8061, 220, 196, 2, 32, "Output",ExpressionUUID->"59218eb1-3506-4219-9311-8f09bb31d57e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8294, 227, 180, 2, 28, "Input",ExpressionUUID->"8f43dd30-bb4b-43ee-b935-cd6dfadbefd9"],
+Cell[8477, 231, 400, 8, 32, "Output",ExpressionUUID->"48e6f2b5-a9fd-41a0-8ebc-bbc90471f788"]
+}, Open  ]],
+Cell[8892, 242, 217, 5, 34, "Text",ExpressionUUID->"16a8853d-4568-4ad6-8fa4-0d3e8501ad09"],
+Cell[CellGroupData[{
+Cell[9134, 251, 231, 4, 28, "Input",ExpressionUUID->"e2131d78-665a-4781-91ac-d4566784a040"],
+Cell[9368, 257, 496, 10, 32, "Output",ExpressionUUID->"57952031-a565-42a3-b19f-e6dc602762a1"]
+}, Open  ]],
+Cell[9879, 270, 401, 7, 56, "Text",ExpressionUUID->"9d9ab08d-64c5-461c-b424-80089782bd8c"],
+Cell[CellGroupData[{
+Cell[10305, 281, 576, 13, 28, "Input",ExpressionUUID->"953d1107-7739-430b-987a-353cf2d0a0b8"],
+Cell[10884, 296, 867, 24, 41, "Output",ExpressionUUID->"c695eb79-5131-4621-9432-4769e60184f8"]
+}, Open  ]],
+Cell[11766, 323, 211, 4, 34, "Text",ExpressionUUID->"25e756c1-0289-46ca-9c4b-5ffda61da86b"],
+Cell[CellGroupData[{
+Cell[12002, 331, 596, 15, 28, "Input",ExpressionUUID->"ed5464e3-2e41-4b9a-a80f-8202ce96a0bb"],
+Cell[12601, 348, 773, 15, 52, "Output",ExpressionUUID->"821ab77b-f2c1-4c62-a50b-74d321c10f52"]
+}, Open  ]],
+Cell[13389, 366, 313, 7, 56, "Text",ExpressionUUID->"6bd231fc-f088-44a5-b84f-ca1111ad9a9a"],
+Cell[CellGroupData[{
+Cell[13727, 377, 555, 15, 28, "Input",ExpressionUUID->"a0c9236a-eca8-42e3-8495-b3fa46e37d2c"],
+Cell[14285, 394, 751, 15, 52, "Output",ExpressionUUID->"f52205b2-66c1-428b-8e26-9bd6329b4b22"]
+}, Open  ]],
+Cell[15051, 412, 240, 4, 34, "Text",ExpressionUUID->"66553404-f4e3-4258-bca2-cebfabbdf5c8"],
+Cell[15294, 418, 265, 6, 34, "Text",ExpressionUUID->"3b950640-ffff-41f8-b146-b255f3ae63db"],
+Cell[CellGroupData[{
+Cell[15584, 428, 602, 16, 28, "Input",ExpressionUUID->"186ec357-13af-4441-9ba1-42a7c6b91406"],
+Cell[16189, 446, 724, 14, 52, "Output",ExpressionUUID->"c70977ea-059d-4ae9-8043-e3f7fae2be50"]
+}, Open  ]],
+Cell[16928, 463, 149, 3, 34, "Text",ExpressionUUID->"4e475046-d4e7-4725-80f5-d0376d26ced8"],
+Cell[CellGroupData[{
+Cell[17102, 470, 212, 3, 28, "Input",ExpressionUUID->"b23fd244-83b9-40e1-86da-df7ffe4e8e0f"],
+Cell[17317, 475, 724, 14, 52, "Output",ExpressionUUID->"b00c7b32-cc97-4e8c-a3bd-39b09458eabf"]
+}, Open  ]],
+Cell[18056, 492, 176, 3, 34, "Text",ExpressionUUID->"34038d7a-8843-4b23-bc4c-8dc523ee1936"],
+Cell[CellGroupData[{
+Cell[18257, 499, 314, 6, 28, "Input",ExpressionUUID->"ee6d95e5-fa8d-467f-9280-6c032f355563"],
+Cell[18574, 507, 779, 15, 67, "Output",ExpressionUUID->"77296503-1cf5-452f-8522-424aa4bd8d2f"]
+}, Open  ]],
+Cell[19368, 525, 156, 3, 34, "Text",ExpressionUUID->"cfd435fe-cbd0-493d-85da-f0ea90ad1e74"],
+Cell[CellGroupData[{
+Cell[19549, 532, 215, 3, 28, "Input",ExpressionUUID->"18e1c284-c46d-4e01-85f4-ee8e15043fe2"],
+Cell[19767, 537, 191, 2, 32, "Output",ExpressionUUID->"c3517167-66d9-433d-9641-57d53b5642e0"]
+}, Open  ]],
+Cell[19973, 542, 340, 7, 56, "Text",ExpressionUUID->"ddd5dc07-ebbb-4e45-8e91-95474e40cf7b"],
+Cell[CellGroupData[{
+Cell[20338, 553, 332, 7, 28, "Input",ExpressionUUID->"55bd5bf2-6e20-4db8-a9a4-bdb29c868569"],
+Cell[20673, 562, 329, 6, 32, "Output",ExpressionUUID->"de6ce5ea-a6e2-483f-8ccb-da61b52599ab"]
+}, Open  ]],
+Cell[21017, 571, 477, 8, 78, "Text",ExpressionUUID->"f05dfa5d-4532-4e92-a1b8-291361c22ec8"],
+Cell[CellGroupData[{
+Cell[21519, 583, 156, 3, 67, "Section",ExpressionUUID->"ceed135a-e685-4cf4-88ff-c1a51a68d0d5"],
+Cell[21678, 588, 707, 14, 166, "Text",ExpressionUUID->"b57615d0-566b-481b-b36d-5f1725dea5f7"]
+}, Open  ]]
+}
+]
+*)
+
